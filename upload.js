@@ -30,4 +30,19 @@ document.getElementById("Upload").onclick = async () => {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+
+    let dataUpload = "";
+  const querySnapshot = await getDocs(collection(db, "information"))
+  querySnapshot.forEach((doc) => {
+    dataUpload += ` 
+  <div> <h1> ${doc.data().Name}
+  <p> ${doc.data().Link}
+  <p> ${doc.data().Description}
+
+  </div>
+  `;
+  }
+  )
+  document.getElementById("dataUpload").innerHTML = dataUpload
+    ;
   }
