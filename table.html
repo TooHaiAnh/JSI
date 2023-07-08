@@ -11,13 +11,25 @@
 
 <body>
 <label >Name</label> <input type="text"  id="Namebox"> <br><br>
+<label >Information</label> <input type="text" id="Place"> <br><br>
 <label >RollNo</label> <input type="text" id="Rollbox"> <br><br>
 <label >Link</label> <input type="text" id="Link"> <br><br>
+
 <hr>
 <button id="Addbtn">Add location</button>
 <button id="Updbtn">Update location</button>
 <button id="Delbtn">Delete location</button>
 <button id="Retbtn">Retrieve location</button>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Picture</th>
+    </thead>
+    <tbody id="data">
+    </tbody>
+    
+</table>
     <script src="table.js" type="module"></script>
 </body>
 
