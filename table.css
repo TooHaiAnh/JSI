@@ -17,7 +17,7 @@ body {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  background: gray;
+  background:  gray;
 }
 .container h2 {
   margin: 0 0 30px;
@@ -97,7 +97,7 @@ body {
   animation: btn-anim3 is linear infinite;
   animation-delay: 0.5s;
 }
-input {
+input{
   margin: 20px;
   color: black;
 }
