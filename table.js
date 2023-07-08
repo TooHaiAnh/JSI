@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"
-import { getFirestore, collection, getDoc, addDoc, doc, onSnapshot,setDoc,updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"
+import { getFirestore, collection, getDoc, addDoc, doc, onSnapshot,setDoc,updateDoc, deleteDoc, getDocs} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"
 
 
 // Your web app's Firebase configuration
@@ -22,6 +22,7 @@ const db = getFirestore(app);
 let NameBox =document.getElementById("Namebox");
 let Link =document.getElementById("Link")
 let Rollbox =document.getElementById("Rollbox");
+let Place =document.getElementById("Place");
 
 let AddBtn =document.getElementById("Addbtn")
 let UpdBtn =document.getElementById("Updbtn")
@@ -38,6 +39,8 @@ async function AddDocument_CustomId() {
             Name : NameBox.value,
             RollNo:Rollbox.value,
             Link:Link.value,
+            Place:Place.value
+
 
         }
     )
@@ -102,3 +105,19 @@ async function DeleteData(){
     .catch((error)=> {alert( "data not deleted " +error);});
      }
 DelBtn.addEventListener("click",DeleteData) 
+
+
+
+
+let newData = "";
+const querySnapshot = await getDocs(collection(db,"information"))
+querySnapshot.forEach((doc) => {
+    newData += `
+    <tr>
+    <td> ${doc.data().RollNo}</td>
+    <td> ${doc.data().Name}</td>
+    <td> <a href ="${doc.data().Link} " target="_blank" style="width:100px;height:100px;"> Picture </a> </td>
+    </tr>
+    `
+})
+document.getElementById("data").innerHTML = newData
