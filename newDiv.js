@@ -5,5 +5,7 @@ document.getElementById("Name").innerHTML = JSON.parse(localStorage.getItem("Nam
 document.getElementById("Description").innerHTML = JSON.parse(localStorage.getItem("Description"))
 document.getElementById("loadimg").onclick = () =>{
             let img = document.createElement('img');
+            img.width  = "1000" ;
+            img.height = "500"  ;
             img.src = JSON.parse(localStorage.getItem("Pic"))
             document.getElementById('body').appendChild(img);}
