@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVFcbZlknf1V-OxuQXdpWtUISVSklhQpT_1w&usqp=CAU) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  img{
+    object-fit: cover;
+  }
+  .container{
+    flex-direction: row;
+  }
+  p{
+    text-align: left;
+  }
